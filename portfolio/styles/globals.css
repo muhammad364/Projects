@@ -1,0 +1,125 @@
+/*
+ * Self-hosted Inter font via @font-face.
+ * Critical weights (400, 500, 600, 700) are preloaded in layout.tsx.
+ * Font files live in /public/fonts/.
+ *
+ * NOTE: Place Inter .woff2 files in /public/fonts/:
+ *   Inter-Regular.woff2
+ *   Inter-Medium.woff2
+ *   Inter-SemiBold.woff2
+ *   Inter-Bold.woff2
+ *
+ * You can download these from https://rsms.me/inter/ or Google Fonts helper.
+ * For initial development, the system fallback (system-ui, sans-serif) will render.
+ */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ─── THEME TOKENS ──────────────────────────────────────────────
+ * Dark: deep slate/charcoal palette — professional, modern.
+ * Light: warm white/soft gray palette — clean, airy.
+ * Switch by toggling .dark / .light class on <html>.
+ */
+
+@layer base {
+  /* ── DARK THEME (default) ────────────────────────────────── */
+  :root,
+  .dark {
+    --color-bg: #0B0F19;
+    --color-surface: #131825;
+    --color-surface-hover: #1A2035;
+    --color-card: #151A2B;
+    --color-card-hover: #1C2340;
+    --color-border: #1E2A3A;
+    --color-border-hover: #3B82F6;
+    --color-text: #F1F5F9;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
+    --color-footer: #070A12;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-accent-glow: rgba(59, 130, 246, 0.25);
+    --color-gradient-start: #0B0F19;
+    --color-gradient-end: #111827;
+  }
+
+  /* ── LIGHT THEME ──────────────────────────────────────────── */
+  .light {
+    --color-bg: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F1F5F9;
+    --color-card: #FFFFFF;
+    --color-card-hover: #F8FAFC;
+    --color-border: #E2E8F0;
+    --color-border-hover: #3B82F6;
+    --color-text: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94A3B8;
+    --color-footer: #F1F5F9;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+    --color-accent-glow: rgba(59, 130, 246, 0.12);
+    --color-gradient-start: #F8FAFC;
+    --color-gradient-end: #EFF6FF;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: "Inter", system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Accessible focus ring — adapts to theme */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px #3B82F6;
+  }
+}
