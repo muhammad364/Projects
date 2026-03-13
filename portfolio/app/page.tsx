@@ -7,6 +7,7 @@ import { CaseStudies } from "@/components/CaseStudies";
 import { Pricing } from "@/components/Pricing";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 import {
   navLinks,
@@ -38,6 +39,9 @@ export default function Home() {
       </main>
 
       <Footer links={navLinks} bookCallHref={bookCallHref} />
+
+      {/* Floating scroll-to-top button */}
+      <ScrollToTop />
     </>
   );
 }

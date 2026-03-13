@@ -1,49 +1,53 @@
 /*
- * Self-hosted Inter font via @font-face.
- * Critical weights (400, 500, 600, 700) are preloaded in layout.tsx.
- * Font files live in /public/fonts/.
+ * Professional sans-serif font stack using system-ui as primary.
+ * Provides consistent rendering across all platforms.
  *
- * NOTE: Place Inter .woff2 files in /public/fonts/:
- *   Inter-Regular.woff2
- *   Inter-Medium.woff2
- *   Inter-SemiBold.woff2
- *   Inter-Bold.woff2
- *
- * You can download these from https://rsms.me/inter/ or Google Fonts helper.
- * For initial development, the system fallback (system-ui, sans-serif) will render.
+ * To use custom Inter fonts in the future:
+ * 1. Download Inter .woff2 files from https://rsms.me/inter/ or google-webfonts-helper
+ * 2. Place files in /public/fonts/:
+ *    - Inter-Regular.woff2
+ *    - Inter-Medium.woff2
+ *    - Inter-SemiBold.woff2
+ *    - Inter-Bold.woff2
+ * 3. Uncomment the @font-face rules below
+ * 4. Update the font-family in the body rule to "Inter"
  */
 
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/Inter-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/Inter-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/Inter-Bold.woff2") format("woff2");
-}
+/* 
+ * OPTIONAL: Uncomment @font-face rules below after adding font files
+ *
+ * @font-face {
+ *   font-family: "Inter";
+ *   font-style: normal;
+ *   font-weight: 400;
+ *   font-display: swap;
+ *   src: url("/fonts/Inter-Regular.woff2") format("woff2");
+ * }
+ *
+ * @font-face {
+ *   font-family: "Inter";
+ *   font-style: normal;
+ *   font-weight: 500;
+ *   font-display: swap;
+ *   src: url("/fonts/Inter-Medium.woff2") format("woff2");
+ * }
+ *
+ * @font-face {
+ *   font-family: "Inter";
+ *   font-style: normal;
+ *   font-weight: 600;
+ *   font-display: swap;
+ *   src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+ * }
+ *
+ * @font-face {
+ *   font-family: "Inter";
+ *   font-style: normal;
+ *   font-weight: 700;
+ *   font-display: swap;
+ *   src: url("/fonts/Inter-Bold.woff2") format("woff2");
+ * }
+ */
 
 @tailwind base;
 @tailwind components;

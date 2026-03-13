@@ -22,21 +22,30 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             __html: `(function(){try{var t=localStorage.getItem("iffas-theme");if(t==="light"||t==="dark"){document.documentElement.className=t+" scroll-smooth"}else if(window.matchMedia("(prefers-color-scheme:light)").matches){document.documentElement.className="light scroll-smooth"}}catch(e){}})()`,
           }}
         />
-        <link
-          rel="preload"
-          href="/fonts/Inter-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Inter-Bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        {/* 
+          Font preloading disabled — font files not yet included.
+          To enable: add Inter .woff2 files to /public/fonts/ and uncomment in globals.css
+          Then uncomment the preload links below:
+          
+          <link
+            rel="preload"
+            href="/fonts/Inter-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        */}
+        {/* Favicon — SVG preferred by modern browsers, fallback to .ico */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="theme-color" content="#0B0F19" />
       </head>
       <body className="font-sans antialiased transition-colors duration-300">
         <ThemeProvider>{children}</ThemeProvider>
